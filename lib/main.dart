@@ -5,8 +5,11 @@ import 'package:my_house/pages/house_first/add_house/add_house_binding.dart';
 import 'package:my_house/pages/house_first/add_house/add_house_view.dart';
 import 'package:my_house/pages/house_first/add_tenant/add_tenant_binding.dart';
 import 'package:my_house/pages/house_first/add_tenant/add_tenant_view.dart';
+import 'package:my_house/pages/house_first/house_edit/house_edit_binding.dart';
+import 'package:my_house/pages/house_first/house_edit/house_edit_view.dart';
 import 'package:my_house/pages/house_first/house_first_binding.dart';
 import 'package:my_house/pages/house_first/house_first_view.dart';
+import 'package:my_house/pages/house_first/house_list/house_fact.dart';
 import 'package:my_house/pages/house_first/house_list/house_list_binding.dart';
 import 'package:my_house/pages/house_first/house_list/house_list_view.dart';
 import 'package:my_house/pages/house_first/tenant_list/tenant_list_binding.dart';
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Rooms,
-      initialRoute: '/house_tab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -106,8 +109,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Rooms = [
+  GetPage(name: '/', page: () => const HouseEditView(), binding: HouseEditBinding()),
   GetPage(name: '/house_tab', page: () => HouseTabPage(), binding: HouseTabBinding()),
   GetPage(name: '/house_second', page: () => HouseSecondPage(), binding: HouseSecondBinding()),
+  GetPage(name: '/house_fact', page: () => const HouseFact()),
   GetPage(name: '/house_first', page: () => HouseFirstPage(), binding: HouseFirstBinding()),
   GetPage(name: '/house_list', page: () => HouseListPage(), binding: HouseListBinding()),
   GetPage(name: '/tenant_list', page: () => TenantListPage(), binding: TenantListBinding()),

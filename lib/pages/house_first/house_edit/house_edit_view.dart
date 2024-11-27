@@ -11,8 +11,8 @@ class HouseEditView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.schroeder.value
-              ? const CircularProgressIndicator(color: Colors.deepPurpleAccent)
+          () => controller.eichmann.value
+              ? const CircularProgressIndicator(color: Colors.blue)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class HouseEditView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.arnfvmx();
+              controller.bifhul();
             },
             icon: const Icon(
               Icons.restart_alt,
